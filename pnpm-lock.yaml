@@ -1,10 +1,19 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@aave/contract-helpers':
+    specifier: ^1.23.0
+    version: 1.23.0(bignumber.js@9.1.2)(ethers@5.7.2)(reflect-metadata@0.1.14)(tslib@2.6.2)
+  '@aave/math-utils':
+    specifier: ^1.23.0
+    version: 1.23.0(bignumber.js@9.1.2)(tslib@2.6.2)
+  '@bgd-labs/aave-address-book':
+    specifier: ^2.17.0
+    version: 2.17.0
   '@radix-ui/react-label':
     specifier: ^2.0.2
     version: 2.0.2(@types/react-dom@18.2.18)(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0)
@@ -32,6 +41,9 @@ dependencies:
   clsx:
     specifier: ^2.1.0
     version: 2.1.0
+  ethers:
+    specifier: '5'
+    version: 5.7.2
   lucide-react:
     specifier: ^0.312.0
     version: 0.312.0(react@18.2.0)
@@ -89,6 +101,33 @@ packages:
     resolution: {integrity: sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /@aave/contract-helpers@1.23.0(bignumber.js@9.1.2)(ethers@5.7.2)(reflect-metadata@0.1.14)(tslib@2.6.2):
+    resolution: {integrity: sha512-EXbsB8BReHpRWQ6N0E2R+XKFIOcVukr9/udxeVd1zn+94sSyGx5sV7aJuYubLQRrRsfRJewmhmvMFFWb52yBZg==}
+    peerDependencies:
+      bignumber.js: ^9.x
+      ethers: ^5.x
+      reflect-metadata: ^0.1.x
+      tslib: ^2.4.x
+    dependencies:
+      bignumber.js: 9.1.2
+      ethers: 5.7.2
+      isomorphic-unfetch: 3.1.0
+      reflect-metadata: 0.1.14
+      tslib: 2.6.2
+    transitivePeerDependencies:
+      - encoding
+    dev: false
+
+  /@aave/math-utils@1.23.0(bignumber.js@9.1.2)(tslib@2.6.2):
+    resolution: {integrity: sha512-XAZB8TL5nRt3a2Xlz/reiLdCdyyvmkNaxjQouVOgIY7XcxCXkFntpAR6a0AoUEunrqnrFlpBRVDk0ctBFtwjuQ==}
+    peerDependencies:
+      bignumber.js: ^9.x
+      tslib: ^2.4.x
+    dependencies:
+      bignumber.js: 9.1.2
+      tslib: 2.6.2
+    dev: false
 
   /@account-abstraction/contracts@0.5.0:
     resolution: {integrity: sha512-CKyS9Zh5rcYUM+4B6TlaB9+THHzJ+6TY3tWF5QofqvFpqGNvIhF8ddy6wyCmqZw6TB74/yYv7cYD/RarVudfDg==}
@@ -157,6 +196,10 @@ packages:
       '@babel/helper-string-parser': 7.23.4
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
+    dev: false
+
+  /@bgd-labs/aave-address-book@2.17.0:
+    resolution: {integrity: sha512-JhKGyaCm6Qg+0jtX3UiNNi7c8+vYqFp8gbAsgMnxMZhDOEoNo4gPtiEq9M9rFl1PwjSEdMyzoRcP/nquFPC52g==}
     dev: false
 
   /@blocto/sdk@0.5.5:
@@ -5394,6 +5437,7 @@ packages:
       is-hex-prefixed: 1.0.0
       strip-hex-prefix: 1.0.0
     dev: false
+    bundledDependencies: false
 
   /event-target-shim@5.0.1:
     resolution: {integrity: sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==}
@@ -7792,6 +7836,10 @@ packages:
     engines: {node: '>=4'}
     dependencies:
       redis-errors: 1.2.0
+    dev: false
+
+  /reflect-metadata@0.1.14:
+    resolution: {integrity: sha512-ZhYeb6nRaXCfhnndflDK8qI6ZQ/YcWZCISRAWICW9XYqMUwjZM9Z0DveWX/ABN01oxSHwVxKQmxeYZSsm0jh5A==}
     dev: false
 
   /reflect.getprototypeof@1.0.4:
