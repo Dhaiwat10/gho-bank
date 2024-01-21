@@ -6,6 +6,7 @@ import { sepolia } from "viem/chains";
 // import { BANK_ADDRESS } from "./constant";
 import { createClient } from '@supabase/supabase-js';
 import { Database } from "@/types/database";
+import { Alchemy, Network } from "alchemy-sdk";
 
 
 export const supabaseClient = createClient<Database>(process.env.NEXT_PUBLIC_SUPABASE_URL as string, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string);
@@ -15,7 +16,12 @@ export const publicClient = createPublicClient({ transport: http(), chain: sepol
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
-}
+};
+
+export const alchemy = new Alchemy({
+  apiKey: process.env.NEXT_PUBLIC_API_KEY as string,
+  network: Network.ETH_SEPOLIA
+})
 
 // export const genPermitSignature = async ({ asset, amount, account, deadline }: IPermitSignatureParams) => {
 //
