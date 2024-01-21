@@ -3,7 +3,6 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@radix-ui/react-label";
 import { useState } from 'react';
-import { } from '@thirdweb-dev/react';
 
 export default function Page() {
   const [address, setAddress] = useState<string>("");

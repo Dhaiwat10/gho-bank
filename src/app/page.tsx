@@ -6,6 +6,7 @@ import { useWallet } from '@thirdweb-dev/react';
 import { useEffect, useState } from 'react';
 import { useToast } from '@/components/ui/use-toast';
 import { useRouter } from 'next/navigation';
+import { supabaseClient } from '@/lib/utils';
 
 export default function Home() {
   const wallet = useWallet();
@@ -20,6 +21,12 @@ export default function Home() {
     (async () => {
       if (wallet) {
         const address = await wallet?.getAddress();
+
+        const { data } = await supabaseClient.from("Accounts").select("*").eq("account", address);
+        if (data?.length === 0) {
+          await supabaseClient.from("Accounts").insert({ account: address });
+          console.log("Address add to database");
+        }
         setAddress(address)
       }
     })()
